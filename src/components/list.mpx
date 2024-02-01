@@ -1,0 +1,61 @@
+<template>
+  <view class="list">
+    <view wx:for="{{listData}}" wx:key="name" class="b-1rpx b-solid b-color-#efefef mx-40rpx my-30rpx b-rd-10rpx p-24rpx">
+      <view class="flex justify-between">
+        <view class="flex">
+          <image src="{{item.avatar}}" mode="widthFix" class="w-148rpx"></image>
+          <view class="flex flex-col">
+            <view class="text-28rpx color-#282828 font-bold">{{item.name}}</view>
+            <view class="text-24rpx color-#919191 mt-20rpx">{{item.record}}</view>
+            <view class="flex mt-20rpx" wx:if="{{item.tags}}">
+              <view wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag" class="text-24rpx color-#C9343F bg-#FFECF0 px-8rpx py-4rpx mx-4rpx">{{tag}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="flex flex-col flex-items-end">
+          <view class="flex justify-end">
+            <image src="https://gift-static.hongyibo.com.cn/static/kfpub/3227/D-Chat_20240201154317.png" mode="widthFix" class="w-44rpx" wx:for="12345" wx:key="*this"></image>
+          </view>
+          <view class="text-48rpx color-#459baa mt-20rpx">{{item.score}}</view>
+          <view class="text-20rpx color-#919191 mt-10rpx">{{item.jrsScore}}</view>
+        </view>
+      </view>
+      <view class="flex justify-between mt-24rpx">
+        <view class="text-24rpx color-#EA6843 px-20rpx py-10rpx bgx">{{item.comment}}</view>
+        <image src="https://gift-static.hongyibo.com.cn/static/kfpub/3227/D-Chat_20240201154335.png" mode="widthFix" class="w-44rpx"></image>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import { createComponent } from '@mpxjs/core'
+
+createComponent({
+  data: {
+    listData: [{
+      avatar: 'https://gift-static.hongyibo.com.cn/static/kfpub/3227/D-Chat_20240201144346.png',
+      name: '吉米巴特勒',
+      tags: ['神射手', '养生篮球'],
+      record: '31分 7板 6助攻 1断 1失误 1帽 2犯规',
+      score: '9.9',
+      jrsScore: '4007 JRs评分',
+      comment: '222222222'
+    }
+    ]
+  }
+})
+</script>
+
+<style lang="stylus">
+page
+  background #FAFBFD
+.bgx
+  background linear-gradient(90deg, #ffefce 0%, #FFFFFF 100%)
+</style>
+
+<script type="application/json">
+  {
+    "component": true
+  }
+</script>
